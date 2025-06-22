@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Rio - Full-Stack Developer</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Menggunakan font Inter jika tersedia, jika tidak, gunakan font sistem */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a192f; /* Warna latar belakang utama yang lebih gelap */
+            color: #ccd6f6; /* Warna teks utama */
+        }
+
+        /* Warna aksen */
+        .text-accent {
+            color: #64ffda;
+        }
+        .bg-accent {
+            background-color: #64ffda;
+        }
+        .border-accent {
+            border-color: #64ffda;
+        }
+
+        /* Styling untuk header saat di-scroll */
+        .header-scrolled {
+            background-color: rgba(10, 25, 47, 0.85);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
+        }
+
+        /* Animasi fade-in saat elemen masuk ke viewport */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#hero" class="text-2xl font-bold text-accent">Rio.</a>
+            
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#about" class="hover:text-accent transition-colors duration-300">Tentang Saya</a>
+                <a href="#portfolio" class="hover:text-accent transition-colors duration-300">Portofolio</a>
+                <a href="#contact" class="hover:text-accent transition-colors duration-300">Kontak</a>
+            </div>
+
+            <button id="mobile-menu-button" class="md:hidden text-2xl z-50">
+                <svg id="menu-open-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+                <svg id="menu-close-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </nav>
+
+        <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-slate-900 flex flex-col items-center justify-center space-y-8 text-2xl">
+            <a href="#about" class="mobile-menu-link hover:text-accent transition-colors duration-300">Tentang Saya</a>
+            <a href="#portfolio" class="mobile-menu-link hover:text-accent transition-colors duration-300">Portofolio</a>
+            <a href="#contact" class="mobile-menu-link hover:text-accent transition-colors duration-300">Kontak</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6">
+
+        <section id="hero" class="min-h-screen flex flex-col justify-center fade-in-section">
+            <div class="max-w-4xl">
+                <p class="text-accent text-lg mb-4">Hai, nama saya</p>
+                <h1 class="text-4xl md:text-7xl font-extrabold text-slate-100">Rio Pratama.</h1>
+                <h2 class="text-4xl md:text-7xl font-extrabold text-slate-400 mt-2">Saya membangun aplikasi untuk web.</h2>
+                <p class="mt-6 max-w-2xl text-slate-400">
+                    Saya seorang Full-Stack Developer yang bersemangat dalam menciptakan solusi digital yang fungsional dan indah. Saat ini, saya fokus pada pengembangan aplikasi web yang responsif dan berkinerja tinggi.
+                </p>
+                <div class="mt-8">
+                    <a href="CV-Rio-Pratama.pdf" download class="inline-block bg-transparent text-accent border border-accent rounded px-8 py-3 font-medium hover:bg-accent/10 transition-colors duration-300">
+                        Unduh CV Saya
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-24 fade-in-section">
+            <h2 class="text-3xl font-bold mb-8 flex items-center">
+                <span class="text-accent mr-4">01.</span>
+                <span class="text-slate-100">Tentang Saya</span>
+                <span class="flex-grow ml-6 h-px bg-slate-700"></span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-10">
+                <div class="md:col-span-3 text-slate-400 space-y-4">
+                    <p>
+                        Halo! Saya Rio, seorang developer yang suka membuat berbagai hal untuk internet. Ketertarikan saya pada pengembangan web dimulai pada tahun 2020 saat saya mencoba membuat sebuah blog sederhana — ternyata proses mengubah ide menjadi kode sangat menyenangkan!
+                    </p>
+                    <p>
+                        Sejak saat itu, saya terus belajar dan mendalami berbagai teknologi. Saya pernah bekerja di sebuah agensi, start-up, dan perusahaan besar, yang memberi saya pengalaman berharga dalam membangun aplikasi dari hulu ke hilir.
+                    </p>
+                    <p>
+                        Berikut adalah beberapa teknologi yang sering saya gunakan:
+                    </p>
+                    <ul class="grid grid-cols-2 gap-2 text-sm mt-4">
+                        <li class="flex items-center"><span class="text-accent mr-2">▹</span> JavaScript (ES6+)</li>
+                        <li class="flex items-center"><span class="text-accent mr-2">▹</span> React & Next.js</li>
+                        <li class="flex items-center"><span class="text-accent mr-2">▹</span> Node.js & Express</li>
+                        <li class="flex items-center"><span class="text-accent mr-2">▹</span> TypeScript</li>
+                        <li class="flex items-center"><span class="text-accent mr-2">▹</span> Python & Django</li>
+                        <li class="flex items-center"><span class="text-accent mr-2">▹</span> Tailwind CSS</li>
+                    </ul>
+                </div>
+                <div class="md:col-span-2 flex justify-center items-start">
+                    <div class="w-64 h-64 rounded-md bg-accent/20 relative group">
+                        <img src="https://placehold.co/400x400/0a192f/64ffda?text=Rio" alt="Foto Rio" class="absolute rounded-md w-full h-full object-cover transition-transform duration-300 group-hover:-translate-x-2 group-hover:-translate-y-2">
+                        <div class="absolute w-full h-full border-2 border-accent rounded-md top-4 left-4 -z-10"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="py-24 fade-in-section">
+            <h2 class="text-3xl font-bold mb-8 flex items-center">
+                <span class="text-accent mr-4">02.</span>
+                <span class="text-slate-100">Portofolio Proyek</span>
+                 <span class="flex-grow ml-6 h-px bg-slate-700"></span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <div class="bg-slate-800 rounded-lg shadow-lg p-6 flex flex-col justify-between transform hover:-translate-y-2 transition-transform duration-300">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path></svg>
+                            <div class="flex space-x-2">
+                                <a href="#" class="text-slate-400 hover:text-accent"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg></a>
+                                <a href="#" class="text-slate-400 hover:text-accent"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg></a>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-100 mb-2">Aplikasi Manajemen Proyek</h3>
+                        <p class="text-slate-400 text-sm">Sebuah platform kolaboratif untuk tim dalam mengelola tugas, milestone, dan progres proyek secara efisien.</p>
+                    </div>
+                    <div class="mt-4 flex flex-wrap text-xs text-slate-400">
+                        <span class="mr-2 mb-2">React</span>
+                        <span class="mr-2 mb-2">Node.js</span>
+                        <span class="mr-2 mb-2">GraphQL</span>
+                        <span class="mr-2 mb-2">MongoDB</span>
+                    </div>
+                </div>
+
+                <div class="bg-slate-800 rounded-lg shadow-lg p-6 flex flex-col justify-between transform hover:-translate-y-2 transition-transform duration-300">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg>
+                            <div class="flex space-x-2">
+                                <a href="#" class="text-slate-400 hover:text-accent"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg></a>
+                                <a href="#" class="text-slate-400 hover:text-accent"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg></a>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-100 mb-2">Platform E-commerce</h3>
+                        <p class="text-slate-400 text-sm">Toko online modern dengan fitur pencarian produk, keranjang belanja, dan sistem pembayaran terintegrasi.</p>
+                    </div>
+                    <div class="mt-4 flex flex-wrap text-xs text-slate-400">
+                        <span class="mr-2 mb-2">Next.js</span>
+                        <span class="mr-2 mb-2">Stripe</span>
+                        <span class="mr-2 mb-2">Tailwind CSS</span>
+                        <span class="mr-2 mb-2">Vercel</span>
+                    </div>
+                </div>
+
+                <div class="bg-slate-800 rounded-lg shadow-lg p-6 flex flex-col justify-between transform hover:-translate-y-2 transition-transform duration-300">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                            <div class="flex space-x-2">
+                                <a href="#" class="text-slate-400 hover:text-accent"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg></a>
+                                <a href="#" class="text-slate-400 hover:text-accent"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg></a>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-100 mb-2">Aplikasi Video Chat</h3>
+                        <p class="text-slate-400 text-sm">Aplikasi real-time video conference yang dibangun menggunakan WebRTC untuk komunikasi peer-to-peer.</p>
+                    </div>
+                    <div class="mt-4 flex flex-wrap text-xs text-slate-400">
+                        <span class="mr-2 mb-2">JavaScript</span>
+                        <span class="mr-2 mb-2">WebRTC</span>
+                        <span class="mr-2 mb-2">Socket.IO</span>
+                        <span class="mr-2 mb-2">Node.js</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contact" class="py-24 text-center fade-in-section">
+             <h2 class="text-2xl font-bold mb-2 flex justify-center items-center">
+                <span class="text-accent mr-3">03.</span>
+                <span class="text-slate-100">Hubungi Saya</span>
+            </h2>
+            <h3 class="text-4xl md:text-5xl font-extrabold text-slate-100 mb-4">Get In Touch</h3>
+            <p class="max-w-xl mx-auto text-slate-400 mb-8">
+                Saat ini saya terbuka untuk peluang baru. Jika Anda memiliki pertanyaan atau hanya ingin menyapa, jangan ragu untuk menghubungi saya. Saya akan berusaha membalas secepatnya!
+            </p>
+            <a href="mailto:rio.pratama.dev@email.com" class="inline-block bg-accent text-slate-900 rounded px-8 py-4 font-bold hover:bg-accent/80 transition-colors duration-300">
+                Kirim Email
+            </a>
+        </section>
+
+    </main>
+
+    <footer class="py-6 text-center text-slate-400 text-sm fade-in-section">
+        <div class="flex justify-center space-x-6 mb-4">
+             <a href="https://github.com" target="_blank" class="hover:text-accent transition-colors duration-300">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+             </a>
+             <a href="https://linkedin.com" target="_blank" class="hover:text-accent transition-colors duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+             </a>
+             <a href="https://twitter.com" target="_blank" class="hover:text-accent transition-colors duration-300">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+             </a>
+        </div>
+        <p>Didesain & Dibangun oleh Rio Pratama</p>
+        <p>&copy; 2025</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // --- Animasi Fade-in saat Scroll ---
+            const sections = document.querySelectorAll('.fade-in-section');
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1 // Muncul saat 10% bagian terlihat
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target); // Hentikan observasi setelah animasi
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+
+            // --- Efek Shadow pada Header saat Scroll ---
+            const header = document.getElementById('main-header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('header-scrolled');
+                } else {
+                    header.classList.remove('header-scrolled');
+                }
+            });
+
+            // --- Fungsionalitas Menu Mobile ---
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuOpenIcon = document.getElementById('menu-open-icon');
+            const menuCloseIcon = document.getElementById('menu-close-icon');
+            const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+
+            const toggleMenu = () => {
+                mobileMenu.classList.toggle('hidden');
+                menuOpenIcon.classList.toggle('hidden');
+                menuCloseIcon.classList.toggle('hidden');
+                // Mencegah scroll pada body saat menu terbuka
+                document.body.classList.toggle('overflow-hidden');
+            };
+            
+            mobileMenuButton.addEventListener('click', toggleMenu);
+
+            // Tutup menu saat link di klik
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', toggleMenu);
+            });
+
+        });
+    </script>
+</body>
+</html>
